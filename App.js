@@ -1,21 +1,32 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { WebView } from 'react-native-webview';
+import React, { Component } from "react";
+import {
+  ActivityIndicator,
+  // Button,
+  SafeAreaView,
+  // StyleSheet,
+  // Text,
+  // View,
+} from "react-native";
+import { WebView } from "react-native-webview";
 
 export default function App() {
+ 
   return (
-   <WebView 
-    javaScriptEnabled={true}
-    originWhitelist={['*']}
-   source={{ uri: 'http://192.168.0.103:5006' }} style={{ marginTop: 20 }} />
+    <>
+      <SafeAreaView style={{ flex: 1 }}>
+       
+        <WebView
+          javaScriptEnabled={true}
+          originWhitelist={["*"]}
+          startInLoadingState
+          renderLoading={() => {
+            return <ActivityIndicator color="black" size="large" />;
+          }}
+          source={{ uri: "https://app.vitlous.com/" }}
+          style={{ marginTop: 20 }}
+          // injectedJavaScript="window.ReactNativeWebView.postMessage(document.title);"
+        />
+      </SafeAreaView>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
