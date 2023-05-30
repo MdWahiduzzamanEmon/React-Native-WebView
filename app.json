@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "erp.rbs",
-    "slug": "erp.rbs",
+    "slug": "erprbs",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,16 +15,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.avro.erprbs"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.avro.erprbs"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "owner": "avro",
+    "extra": {
+      "eas": {
+        "projectId": "ef4c63bb-a0ac-4ada-99b6-d1308230faa0"
+      }
     }
   }
 }
